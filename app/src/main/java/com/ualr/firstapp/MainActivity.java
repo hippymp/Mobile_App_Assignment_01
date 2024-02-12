@@ -1,7 +1,5 @@
 package com.ualr.firstapp;
 
-import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
-
 import android.os.Bundle;
 import android.view.View;
 
