@@ -1,11 +1,13 @@
-package com.ualr.helloworld;
+package com.ualr.firstapp;
+
+import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
 
 import android.os.Bundle;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.ualr.helloworld.databinding.ActivityMainBinding;
+import com.ualr.firstapp.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,8 +23,13 @@ public class MainActivity extends AppCompatActivity {
 
     // TODO 06. Avoid updating the text label (userMsgTV) when the text field (userInputET) is empty
     public void showTextMessage(View view) {
-        mBinding.userMsgTV.setText(mBinding.userInputET.getText().toString());
+        if(!mBinding.userInputET.getText().toString().matches("")){
+            mBinding.userMsgTV.setText(mBinding.userInputET.getText().toString());
+        }
     }
 
     // TODO 07. Create a new method called cleanTextField to delete the text inside the text field
+    public void cleanTextField(View view) {
+        mBinding.userInputET.setText("");
+    }
 }
